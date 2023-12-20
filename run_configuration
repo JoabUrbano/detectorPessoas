@@ -1,0 +1,16 @@
+-v
+video/passaros.mp4
+-p
+MobileNetSSD_deploy.prototxt.txt
+-m
+MobileNetSSD_deploy.caffemodel
+-c
+0.2
+-u
+Joab_Urbano
+-k
+aio_mVdl92oNiSTLQxiTKRH3ixlxcOgu
+-f
+bird-detect
+-f2
+espanta-passaro

@@ -11,17 +11,18 @@ video_source = "./video/pessoavideo.mp4"
 prototxt_path = "./MobileNetSSD_deploy.prototxt.txt"
 model_path = "./MobileNetSSD_deploy.caffemodel"
 confidence_threshold = 0.2
-username = "huvi202"
-key = "aio_Pucm67fiAGoDoojQ24Fj1qb5TYKS"
+username = "USER_NAME"
+key = "ADAFRUIT_KEY"
 # Feed de string alertando a detecção
-feed_name = "texto-identificador-pessoas"
+feed_name = "FEED_TEXT_NAME"
 # Feed para a ativação de um atuador
-feed2_name = "identificador-pessoas"
+feed2_name = "FEET_ATUADOR_NAME"
 
 clientREST = Client(username, key)
 clientREST.send(feed_name, "Nada detectado")
 clientREST.send(feed2_name, "OFF")
 
+itemIdentificado = "person"
 
 camera = cv2.VideoCapture(video_source)
 
@@ -70,7 +71,7 @@ while True:
 
             # filtrar detecções fracas, garantindo que a "confiança" seja
             # maior que a confiança mínima
-            if confidence > confidence_threshold and CLASSES[idx] == "person":
+            if confidence > confidence_threshold and CLASSES[idx] == itemIdentificado:
                 # extrair o índice do rótulo da classe das `detecções`,
                 # em seguida, calcule as coordenadas (x, y) da caixa delimitadora para
                 # o objeto
